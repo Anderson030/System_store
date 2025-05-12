@@ -20,7 +20,7 @@ def add_product(inventory):
     # Check if the product already exists 
 
     if any(p['name'].lower() == name.lower() for p in inventory): #Verify if product exists
-        print(f"{name} The product already exists. Please verify")
+        print(f" '{name}' The product already exists. Please verify")
         return
     try: 
         # Request and convert price and quantity
@@ -32,7 +32,7 @@ def add_product(inventory):
         return
     #add the product to inventory 
     inventory.append({'name':name, 'price':price, 'quantity':quantity})
-    print(f"Product{name} add successfully.\n") #  Confirmation message
+    print(f"Product '{name}' add successfully.\n") #  Confirmation message
 
 
 
@@ -42,7 +42,7 @@ def find_product(inventory, name):
     for product in inventory: #Find product in inventory 
         if product['name'].lower() == name.lower():  #  comparison // capital letters
             return product
-    return print(f"{name} The product does not exist") # If no find, return print()
+    return print(f"{name} the product does not exist") # If no find, return print()
 
     #this function find product specifically
 def consult_product(inventory):
@@ -52,6 +52,7 @@ def consult_product(inventory):
 
     if product:
       # If found, display its information
+        print("The product exists, these are its details: ")
         print(f"Product: {product['name']}")
         print(f"Price: {product ['price']:.2f}")
         print(f"Quantity: {product['quantity']}\n")
@@ -73,9 +74,11 @@ def update_price(inventory):
     except ValueError:
         print("Incorrect price. Please, must be a number.\n")
         return
-
-    product['price'] = new_price  # Updated price
-    print(f"Price'{name}' Updated to {new_price}.\n")
+    if new_price <= 0:
+            print("Values ​​cannot be less than $0.00")
+    else:
+        product['price'] = new_price  # Updated price
+        print(f"Price'{name}' Updated to {new_price}.\n")
 
 # Function to delete product 
 def delete_product(inventory):
