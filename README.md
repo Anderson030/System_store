@@ -1,91 +1,70 @@
+The program begins with a welcome message
 
-Welcome to our store system.
+print("Welcome to our store system")
 
-Then, the main() function is called, which controls the program flow. It initializes an empty list called inventory and repeatedly shows a menu using the show_menu() function.
 
-Function show_menu()
-This function displays a menu with 6 options:
+Call the main() function.
 
-Add product
+Next, the main() function is called. It controls the entire program flow.it initializes an empty list called "inventory" and displays a menu using the show_menu() function. This function is repeated to add more than 5 products.
 
-Consult product
+ inventory = [
+        {'name': 'Laptop', 'price': 5000000.00, 'quantity': 5},
+        {'name': 'Mouse', 'price': 30000.00, 'quantity': 10},
+        {'name': 'Keyboard', 'price': 45000.00, 'quantity': 7},
+        {'name': 'Monitor', 'price': 300000.00, 'quantity': 4},
+        {'name': 'USB Cable', 'price': 10000.00, 'quantity': 20},
+    ]
 
-Update price
 
-Delete product
+-----------------------------------------------------------
+show_menu() Displays 6 options:
 
-Calculate total value
+print("1. Add product")
+print("2. Consult product")
+print("3. Update price")
+print("4. Delete product")
+print("5. Calculate total value")
+print("6. Exit")
 
-Exit
 
-Each option is validated using an if/elif structure and calls the corresponding function.
+Each option shows me an if/elif structure and calls the function based on the option selected by the user.
+------------------------------------------------
 
-Option 1: add_product()
-Prompts the user for a new product name.
+Option 1: add_product():
 
-Uses strip() to remove surrounding spaces.
+Use strip() to remove spaces.
+Checks if the product already exists 
+If it already exists, return a message. (The product already exists. Please verify.)
+If not exists, REQUEST the unit price and quantity using try.
+Checks that the price is greater than 0 and that the price is not a negative value.
+If everything is correct, add it to the empty list.
 
-Checks if the product already exists (case-insensitive).
+-------------------------------------------------------
 
-If it exists, shows a warning message.
+Option 2 Consult product:
 
-If not, requests unit price (float) and quantity (int) using try.
+If found, a message and product details are printed.
+If not found, it displays a message indicating that there is no product.
 
-Validates that price > 0 and quantity is non-negative.
+-----------------------------------------------------------
+Option 3 update_price()
 
-If all is valid, appends the product to the inventory and confirms success.
+Use find_product() to search.
+If it's not found, it displays an error message.
+If it's found, request the new price using the try command.
+Check that the price is greater than 0.
+If all else fails, update the price.
+-----------------------------------------------------------
+Option 4: delete_product() Requests the name of the product to delete
 
-Option 2: consult_product()
-Requests the product name.
+Uses find_product() to see if it exists.
+If it doesn't, display a message.
+Delete the product and return to the menu.
+--------------------------------------------------------
+Option 5: calculatetotal() Calculates all products with a lambda Displays the total with two decimal places.
 
-Uses find_product() to search.
-
-If found, prints its details (name, price, quantity).
-
-If not found, shows a message indicating absence in inventory.
-
-Option 3: update_price()
-Requests the name of the product to update.
-
-Uses find_product() to locate it.
-
-If not found, shows an error.
-
-If found, asks for new price using a try block.
-
-Validates that the price is greater than 0.
-
-If valid, updates the price and confirms the change.
-
-Option 4: delete_product()
-Asks for the name of the product to delete.
-
-Uses find_product() to confirm existence.
-
-If it doesn’t exist, shows a message.
-
-If it exists, removes it from inventory and confirms.
-
-Option 5: calculate_total()
-Calculates the total value by summing price * quantity for each product.
-
-Displays the total with two decimal places.
-
-Option 6: Exit
-Shows a farewell message and exits the loop.
-
-Initial products
-The inventory list starts with 5 predefined products when main() begins:
-
-Laptop
-
-Mouse
-
-Keyboard
-
-Monitor
-
-USB Cable
+---------------------------------------------------------
+Option 6: If you choose this option you exit the program, ending with a message
 
 
 
@@ -93,12 +72,3 @@ USB Cable
 
 
 
-
-
-
-
-
-
-
-
-ChatGPT puede cometer errores. Comprueba la información 
