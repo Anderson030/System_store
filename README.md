@@ -1,3 +1,15 @@
+Criterios de aceptación:
+• El programa debe permitir agregar al menos 5 productos iniciales.
+• Al consultar un producto, debe indicar si no existe en el inventario con un mensaje claro.
+• La actualización de precios debe validar que el nuevo precio sea un número positivo.
+• La eliminación de un producto debe confirmar su existencia antes de borrarlo.
+• El cálculo del valor total del inventario debe ser preciso y mostrar el resultado con dos
+decimales.
+• El código debe estar estructurado en funciones para cada operación y debe incluir
+comentarios explicativos.
+• El código y los comentarios deben estar 100% sin excepción alguna en inglés
+
+
 # System_store
 system
 
